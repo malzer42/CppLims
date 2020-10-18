@@ -1,7 +1,7 @@
-/** 
+/**
  * File:   Book.cpp
  * Author: Pierre Abraham Mulamba
- * 
+ *
  * Created on 29 June 2020, 22 h 18
  */
 
@@ -10,12 +10,12 @@
 /**
  */
 Book::Book() {
-    quote_ = "quote";
-    title_ = "title";
-    year_ = 0;
-    minReaderAge_ = 0;
-    nPossess_ = 0;
-    //nAvailables_ = nPossess_;
+  quote_ = "quote";
+  title_ = "title";
+  year_ = 0;
+  minReaderAge_ = 0;
+  nPossess_ = 0;
+  //nAvailables_ = nPossess_;
 }
 
 /**
@@ -26,14 +26,10 @@ Book::Book() {
  * @param minReaderAge
  * @param nPossess
  */
-Book::Book(const std::string& quote, const std::string& title, unsigned short year, unsigned short minReaderAge, 
-        unsigned int nPossess) : quote_(std::move(quote)), title_(std::move(title)), 
-        year_(year), minReaderAge_(minReaderAge), 
-        nPossess_(nPossess)
+Book::Book(const std::string& quote, const std::string& title, unsigned short year, unsigned short minReaderAge,  unsigned int nPossess) :
+  quote_(std::move(quote)), title_(std::move(title)), year_(year), minReaderAge_(minReaderAge), nPossess_(nPossess)
 {
-    setNAvailables(getNPossess());
-    //nAvailables_ = 0;
-    //nAvailables_ = getNPossess(); //nPossess_;    
+  setNAvailables(getNPossess());
 }
 
 // Getter methods
@@ -41,15 +37,17 @@ Book::Book(const std::string& quote, const std::string& title, unsigned short ye
  * Get the quote_ attribute
  * @return quote_
  */
-const std::string& Book::getQuote()const{
-    return quote_;
+const std::string& Book::getQuote()const
+{
+  return quote_;
 }
 
 /**
  * Get the title_ attribute
  * @return title_
  */
-const std::string& Book::getTitle() const{
+const std::string& Book::getTitle()const
+{
     return title_;
 }
 
@@ -57,7 +55,8 @@ const std::string& Book::getTitle() const{
  * Get the year_ attribute
  * @return year_
  */
-unsigned short Book::getYear() const{
+unsigned short Book::getYear()const
+{
     return year_;
 }
 
@@ -65,16 +64,18 @@ unsigned short Book::getYear() const{
  * Get the minReaderAge_ attribute
  * @return minReaderAge_
  */
-unsigned short Book::getMinReaderAge() const{
-    return minReaderAge_;
+unsigned short Book::getMinReaderAge() const
+{
+  return minReaderAge_;
 }
 
 /**
  * Get the nPossess_ attribute
  * @return nPossess_
  */
-unsigned int Book::getNPossess() const{
-    return nPossess_;
+unsigned int Book::getNPossess() const
+{
+  return nPossess_;
 }
 
 /**
@@ -142,8 +143,8 @@ void Book::setNAvailables(unsigned int nAvailables){
  * Assign the orig attributes to the instance attributes
  * @param orig
  */
-Book::Book(const Book& orig) : quote_(std::move(orig.getQuote())), title_(std::move(orig.getTitle())), 
-        year_(orig.getYear()), minReaderAge_(orig.getMinReaderAge()), nPossess_(orig.getNPossess())
+Book::Book(const Book& orig) : quote_(std::move(orig.getQuote())), title_(std::move(orig.getTitle())), year_(orig.getYear()),
+                               minReaderAge_(orig.getMinReaderAge()), nPossess_(orig.getNPossess())
 {
 }
 
@@ -161,8 +162,6 @@ Book::Book(Book&& orig)noexcept : quote_(""), title_(""), year_(0), minReaderAge
     year_ = orig.getYear();
     minReaderAge_ = orig.getMinReaderAge();
     nPossess_ = orig.getNPossess();
-    //nAvailables_ = orig.getNAvailables();
-    
     orig.setQuote("");
     orig.setTitle("");
     orig.setYear(0);
