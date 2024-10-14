@@ -1,7 +1,7 @@
 /**
  * File:   main.cpp
  * Author: Pierre Abraham Mulamba
- * Created (modified) on : 20200629, 19:28 (20200729, 15:47)
+ * Created (modified) on : 20200629, 19:28 (20241014, 15:47)
  * Description: Supreme Commander
  */
 
@@ -44,9 +44,9 @@ int main(int argc, char* argv[])
     sub2->print();
     sub3->print();
 
-    Subscriber sub("1234", "sub", "bus", 100, "98765");
-    std::cin >> sub;
-    std::cout << sub;
+    // Subscriber sub("1234", "sub", "bus", 100, "98765");
+    // std::cin >> sub;
+    // std::cout << sub;
 
     // Creation of Books instances
     auto book7 = std::make_shared<Book>("HB514", "Big D++", 2010, 9, 4); // ("GA403", "Big C++", 2009, 8, 3);
