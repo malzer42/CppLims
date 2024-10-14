@@ -1,0 +1,38 @@
+Build and Run Instructions
+1. Building and Running Locally
+Prerequisites:
+C++ compiler (e.g., GCC or Clang)
+CMake installed on your system.
+Steps:
+Clone the repository or download the source files.
+
+Create a build directory and navigate into it:
+=============================================
+mkdir build
+cd build
+
+Run CMake to configure the build:
+===================================
+cmake ..
+
+Compile the program
+=========================
+make
+
+Run the program
+================
+./cpp-lims
+
+
+2. Building and Running with Docker
+Prerequisites:
+Docker installed on your system.
+Steps:
+
+Build the Docker image:
+===============================
+docker build -t pmulamba/cpplims-app .
+
+Run the Docker container:
+============================
+docker run --rm pmulamba/cpplims-app
