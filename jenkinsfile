@@ -36,7 +36,6 @@ pipeline {
                 script {
                     // Run the compiled binary (assuming it's called 'myapp')
                     sh '''
-                        cd build
                         ./cpp_lims
                     '''
                 }
@@ -74,7 +73,7 @@ pipeline {
         }
         failure {
             // Notify on build failure
-            mail to: 'pmulamba@gmail.com',
+            mail to: 'p.a.mulamba@gmail.com',
                 subject: "Build Failed in Jenkins: ${env.JOB_NAME} - ${env.BUILD_NUMBER}",
                 body: "Something went wrong. Check the console output for more details."
         }
