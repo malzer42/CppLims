@@ -6,6 +6,9 @@ pipeline {
         DOCKER_IMAGE = 'pmulamba/cpplims'
         DOCKER_TAG = 'latest'
     }
+    triggers {
+        pollSCM '*/5 * * * *'
+    }
     stages {
         stage('Clone Repository') {
             steps {
