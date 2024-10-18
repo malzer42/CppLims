@@ -34,7 +34,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    // Run the compiled binary (assuming it's called 'myapp')
+                    // Run the compiled binary 
                     sh '''
                         ./cpp_lims
                     '''
@@ -46,7 +46,7 @@ pipeline {
     post {
         always {
             // Clean up workspace after build
-            cleanWs()
+            //cleanWs()
         }
         failure {
             // Notify on build failure
