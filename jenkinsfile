@@ -46,7 +46,7 @@ pipeline {
     post {
         always {
             // Clean up workspace after build
-            //cleanWs()
+            cleanWs()
         }
         failure {
             // Notify on build failure
