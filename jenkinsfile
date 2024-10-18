@@ -41,7 +41,29 @@ pipeline {
                     '''
                 }
             }
-        }      
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image from Dockerfile
+                    sh '''
+                        docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
+                    '''
+                }
+            }
+        }
+
+        stage('Run Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image from Dockerfile
+                    sh '''
+                        docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} 
+                    '''
+                }
+            }
+        }   
     }
 
     post {
