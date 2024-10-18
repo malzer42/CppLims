@@ -18,7 +18,7 @@ jobs:
     - name: change
       run: cd build
     - name: cmake
-      run: cmake ..
+      run: cmake
     - name: make
       run: make
     - name: make check
