@@ -13,10 +13,10 @@ WORKDIR /app
 COPY . /app
 
 # Create a build directory and compile the program using CMake
-RUN mkdir -p build && \
-    cd build && \
+RUN mkdir -p buildj && \
+    cd buildj && \
     cmake .. && \
     make
 
 # Run the built executable when the container starts
-CMD ["./build/cpp_lims"]
+CMD ["./buildj/cpp_lims"]
