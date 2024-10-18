@@ -36,6 +36,7 @@ pipeline {
                 script {
                     // Run the compiled binary 
                     sh '''
+                        cd build
                         ./cpp_lims
                     '''
                 }
