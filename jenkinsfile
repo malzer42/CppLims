@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_HUB_CREDENTIALS = credentials('dockerhub-creds') // Jenkins credential ID for Docker Hub
-        GITHUB_REPO_URL = 'https://github.com/malzer42/CppLims'
+        GITHUB_REPO_URL = 'https://github.com/malzer42/CppLims.git'
         DOCKER_IMAGE = 'pmulamba/cpplims'
         DOCKER_TAG = 'latest'
     }
