@@ -13,7 +13,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Cloning the repository from GitHub
-                git branch: 'master', url: "${GITHUB_REPO_URL}"
+                git branch: 'dockerhub', url: "${GITHUB_REPO_URL}"
             }
         }
 
@@ -64,6 +64,18 @@ pipeline {
                 }
             }
         }
+        
+        stage('Push Docker Image to Docker Hub') {
+            steps {
+                script {
+                    // Push the Docker image to Docker Hub
+                    sh '''
+                        docker login -u ${DOCKER_HUB_CREDENTIALS[0]} -p ${DOCKER_HUB_CREDENTIALS[1]}
+                        docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
+                    '''
+                }
+            }
+        }    
         
     }
 
