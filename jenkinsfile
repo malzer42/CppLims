@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image from Dockerfile
-                    dockerImage = docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}", "./Dockerfile")
+                    dockerImage = docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
                     // sh '''
                     //     docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
                     // '''
