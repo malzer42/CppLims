@@ -59,7 +59,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker image
-                    dockerImage.run("${DOCKER_IMAGE}:${DOCKER_TAG}")  // Run in detached mode
+                    dockerImage.run(" --rm ${DOCKER_IMAGE}:${DOCKER_TAG}")  // Run in detached mode
                     // sh '''
                     //     docker run --rm ${DOCKER_IMAGE}:${DOCKER_TAG} 
                     // '''
