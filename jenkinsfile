@@ -10,14 +10,14 @@ pipeline {
         pollSCM 'H/5 * * * *'
     }
     stages {
-        stage('Clone Repository') {
+        stage('CI : Clone Repository From GitHub') {
             steps {
                 // Cloning the repository from GitHub
                 git branch: 'dockerhub', url: "${GITHUB_REPO_URL}"
             }
         }
 
-        stage('Build with CMake') {
+        stage('CI : Build with CMake') {
             steps {
                 script {
                     // Create build directory and run cmake
@@ -31,7 +31,7 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+        stage('CI : Run Tests') {
             steps {
                 script {
                     // Run the compiled binary 
@@ -43,7 +43,7 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('CD : Build Docker Image') {
             steps {
                 script {
                     // Build the Docker image from Dockerfile
@@ -54,7 +54,7 @@ pipeline {
             }
         }
 
-        stage('Run Docker Image') {
+        stage('CD : Run Docker Image') {
             steps {
                 script {
                     // Build the Docker image from Dockerfile
@@ -65,7 +65,7 @@ pipeline {
             }
         }
         
-        stage('Push Docker Image to Docker Hub') {
+        stage('CD : Push Docker Image to Docker Hub') {
             steps {
                 script {
                     // Push the Docker image to Docker Hub
